@@ -13,9 +13,9 @@ class AboutView
         $this->model = $model;
     }
 
-    public function output()
+    public function header()
     {
-      return $string = "<p><a href='?action=clicked'>{$this->model->string}</a></p>";
+      return $string = "{$this->model->string}";
 
     }
 }

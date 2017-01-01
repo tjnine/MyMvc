@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 class AboutController
 {
-    public $model;
+    private $model;
 
     public function __construct($model)
     {
