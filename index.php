@@ -1,6 +1,6 @@
 <?php 
 require_once __DIR__ . '/vendor/autoload.php';
-
+require_once __DIR__ . '/core/init.php';
 $m = new App\Models\AboutModel;
 $c = new App\Controllers\AboutController($m);
 $v = new App\Views\AboutView($c,$m);
