@@ -1,10 +1,3 @@
-<?php 
-require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/core/init.php';
-$m = new App\Models\AboutModel;
-$c = new App\Controllers\AboutController($m);
-$v = new App\Views\AboutView($c,$m);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,112 +8,214 @@ $v = new App\Views\AboutView($c,$m);
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>MyMvc</title>
+    <title>Awesome-PHP</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/justified-nav.css">
+    <link href="http://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
 
     <!-- Custom styles for this template -->
-    <link href="justified-nav.css" rel="stylesheet">
+    <link href="../assets/justified-nav.css" rel="stylesheet">
   </head>
 
   <body>
+<?php 
+require_once 'templates/header.php';
 
-    <div class="container">
+// OOP
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/core/init.php';
+$m = new App\Models\AboutModel;
+$c = new App\Controllers\AboutController($m);
+$v = new App\Views\AboutView($c,$m);
+?>
 
-      <div class="masthead">
-            <div class="col-lg-8">
-                <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-            </div>
-        
-      </div>
 
       <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1><?php echo $v->header(); ?></h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-      </div>
 
-      <!-- Example row of columns -->
+      <div class="jumbotron">
+        <h1 class="main-header">
+
+        <?php echo $v->header(); ?>
+          
+        </h1>
+        <p class="lead">This is the input from the View Class which inherits the the Controller Class which inherits from the Parent Class Needs new stylesheet for custom styles - with and without Bootstrap and Foundation.</p>
+        <ul class="list-inline list-unstyled">
+        <li> <a href="#">Sign Up &nbsp;<img src="assets/images/php.png" width="54" height="32" alt=""></a> </li>
+          <li> <a href="#">Sign Up with Twitter &nbsp;<img src="assets/images/twitter.png" width="32" height="32" alt=""></a> </li>
+          <li> <a href="#">Sign Up with Facebook &nbsp;<img src="assets/images/facebook.png" width="64" height="32" alt=""></a> </li>
+          <li> <a href="#">Sign Up with Github &nbsp;<img src="assets/images/github.png" width="32" height="32" alt=""></a> </li>
+          <li> <a href="#">Sign Up with Google &nbsp;<img src="assets/images/google.png" width="32" height="32" alt=""></a> </li>
+        </ul>
+<!--         <p><a class="btn btn-lg btn-success" href="#" role="button">Awesome-PHP Blog</a></p>
+ -->      </div>
+
+      <!-- FIRST ROW -->
       <div class="row">
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Community</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="http://www.php.net">PHP Documentation</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Getting Started</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="http://www.phptherightway.com">Php The Right Way</a> </li>
+              <li> <a href="http://www.laracasts.com">Laracasts</a> </li>
+              <li> <a href="http://www.tutsplus.com">Tuts Plus</a> </li>
+              <li> <a href="#">Sitepoint</a> </li>
+              <li> <a href="#">Enavato</a> </li>
+            </ul>
+           </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
        </div>
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Frameworks</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="http://www.laravel.com">Laravel</a> </li>
+              <li> <a href="#">Symfony</a> </li>
+              <li> <a href="#">SlimPHP</a> </li>
+              <li> <a href="#">Silex</a> </li>
+              <li> <a href="#">CakePHP</a> </li>
+              <li> <a href="#">Yii</a> </li>
+              <li> <a href="#">Medoo</a> </li>
+              <li> <a href="#">Aura</a> </li>
+              <li> <a href="#">Phalcon</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
       </div>
 
-      <!-- Site footer -->
-      <footer class="footer">
-        <p>&copy; Company 2017</p>
-      </footer>
+   <!-- SECOND ROW -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Databases</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">MySql</a> </li>
+              <li> <a href="#">PostgreSQL</a> </li>
+              <li> <a href="#">MongoDB</a> </li>
+              <li> <a href="#">CouchDB</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+        <div class="col-lg-4">
+          <h2>ORM Abstractions</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">PDO</a> </li>
+              <li> <a href="#">RedBean</a> </li>
+              <li> <a href="#">Eloquent</a> </li>
+              <li> <a href="#">Doctrine</a> </li>
+            </ul>
+           </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+       </div>
+        <div class="col-lg-4">
+          <h2>Virtualization</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Vagrant</a> </li>
+              <li> <a href="#">Otto</a> </li>
+              <li> <a href="#">Docker</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+      </div>
+      
+      <!-- THIRD ROW -->
+    
+<div class="row">
+        <div class="col-lg-4">
+          <h2>Design Patterns</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+        <div class="col-lg-4">
+          <h2>Files/Streams</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+           </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+       </div>
+        <div class="col-lg-4">
+          <h2>Dependency Injection</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+      </div>
 
-    </div> <!-- /container -->
+      <!-- FOURTH ROW -->
+<div class="row">
+        <div class="col-lg-4">
+          <h2>Security</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+        <div class="col-lg-4">
+          <h2>Deployment</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+           </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+       </div>
+        <div class="col-lg-4">
+          <h2>Resources</h2>
+          <p>
+            <ul class="list-unstyled">
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+              <li> <a href="#">Link</a> </li>
+            </ul>
+          </p>
+         <!--  <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+      </div>
 
+      
+
+<?php 
+// Footer
+require_once 'templates/footer.php';
+ ?>
+ </div> <!-- end container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
