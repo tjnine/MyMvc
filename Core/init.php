@@ -19,6 +19,23 @@ $GLOBALS['config'] = [
     ]
 ];
 
+define('DB_HOST', 'localhost');
+
+/**
+ * The database name
+ */
+define('DB_NAME', 'fukyeah');
+
+/**
+ * The user in your database
+ */
+define('DB_USER', 'root');
+
+/**
+ * The user's password in your database
+ */
+define('DB_PASS', 'root');
+
 /**
  * Dont need - using psr4 composer autoloading
  */

@@ -40,6 +40,11 @@ $v = new App\Views\AboutView($c,$m);
           
         </h1>
         <p class="lead">This is the input from the View Class which inherits the the Controller Class which inherits from the Parent Class Needs new stylesheet for custom styles - with and without Bootstrap and Foundation.</p>
+        <p>
+          <?php 
+            echo $v->content();
+           ?>
+        </p>
         <ul class="list-inline list-unstyled">
         <li> <a href="#">Sign Up &nbsp;<img src="assets/images/php.png" width="54" height="32" alt=""></a> </li>
           <li> <a href="#">Sign Up with Twitter &nbsp;<img src="assets/images/twitter.png" width="32" height="32" alt=""></a> </li>

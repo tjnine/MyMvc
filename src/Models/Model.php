@@ -1,13 +1,12 @@
 <?php 
 namespace App\Models;
 
+use App\Models\Database;
+
 class Model {
 
-    public $string;
-
-    public function __construct() 
-    {
-        $this->string = "mVC";
+    function __construct() {
+        $this->db = new Database();
     }
 
 }

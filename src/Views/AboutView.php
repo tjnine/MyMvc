@@ -15,7 +15,12 @@ class AboutView
 
     public function header()
     {
-      return $string = "{$this->model->string}";
+        echo "Awesome-PHP.net";
+    }
+
+    public function content()
+    {
+      return $this->model->run();
 
     }
 }
